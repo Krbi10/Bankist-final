@@ -3,7 +3,7 @@
 const account1 = {
   owner: 'Stefan Krbavac',
   movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
-  interestRate: 1.2, // %
+  interestRate: 1.2, 
   pin: 1111,
 
   movementsDates: [
@@ -66,6 +66,8 @@ const inputTransferAmount = document.querySelector('.form__input--amount');
 const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
+
+const internalNav = document.querySelector('.internal-nav');
 
 const formatMovementDate = function (date, locale) {
   const calcDaysPassed = (date1, date2) =>
@@ -160,9 +162,7 @@ createUsernames(accounts);
 
 const updateUI = function (acc) {
   displayMovements(acc);
-
   calcDisplayBalance(acc);
-
   calcDisplaySummary(acc);
 };
 
@@ -177,6 +177,8 @@ const startLogOutTimer = function () {
       clearInterval(timer);
       labelWelcome.textContent = 'Log in to get started';
       containerApp.style.opacity = 0;
+
+      if (internalNav) internalNav.classList.remove('visible');
     }
 
     time--;
@@ -205,6 +207,8 @@ btnLogin.addEventListener('click', function (e) {
       currentAccount.owner.split(' ')[0]
     }`;
     containerApp.style.opacity = 100;
+
+    if (internalNav) internalNav.classList.add('visible');
 
     const now = new Date();
     const options = {
@@ -292,6 +296,8 @@ btnClose.addEventListener('click', function (e) {
     accounts.splice(index, 1);
 
     containerApp.style.opacity = 0;
+
+    if (internalNav) internalNav.classList.remove('visible');
   }
 
   inputCloseUsername.value = inputClosePin.value = '';

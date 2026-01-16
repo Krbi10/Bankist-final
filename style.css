@@ -8,7 +8,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth; /* smooth scroll for internal links */
 }
 
 body {
@@ -79,6 +79,7 @@ nav {
   color: #777;
 }
 
+/* ===== SEO header ===== */
 .seo-header {
   max-width: 100rem;
   margin: 2rem auto 0;
@@ -99,6 +100,7 @@ nav {
   margin-bottom: 1.2rem;
 }
 
+/* ===== Internal nav (hidden before login, fade-in after login) ===== */
 .internal-nav {
   display: flex;
   flex-wrap: wrap;
@@ -135,6 +137,7 @@ nav {
   color: #111;
 }
 
+/* MAIN */
 .app {
   position: relative;
   max-width: 100rem;
@@ -144,6 +147,7 @@ nav {
   grid-template-rows: auto repeat(3, 15rem) auto;
   gap: 2rem;
 
+  /* NOTE This creates the fade in/out anumation */
   opacity: 0;
   transition: all 1s;
 }
@@ -172,6 +176,7 @@ nav {
   font-weight: 400;
 }
 
+/* MOVEMENTS */
 .movements {
   grid-row: 2 / span 3;
   background-color: #fff;
@@ -216,6 +221,7 @@ nav {
   margin-left: auto;
 }
 
+/* SUMMARY */
 .summary {
   grid-row: 5 / 6;
   display: flex;
@@ -254,6 +260,7 @@ nav {
   cursor: pointer;
 }
 
+/* OPERATIONS */
 .operation {
   border-radius: 1rem;
   padding: 3rem 4rem;
@@ -286,12 +293,14 @@ h2 {
   gap: 0.4rem 1rem;
 }
 
+/* Exceptions for interst */
 .form.form--loan {
   grid-template-columns: 2.5fr 1fr 2.5fr;
 }
 .form__label--loan {
   grid-row: 2;
 }
+/* End exceptions */
 
 .form__input {
   width: 100%;

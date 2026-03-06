@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://krbi10.github.io/Bankist-final/sitemap.xml

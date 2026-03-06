@@ -1,199 +1,198 @@
 <!DOCTYPE html>
-<html lang="sr-RS">
+<html lang="sr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <title>
-      Bankist – Online e-banka za Srbiju | Pregled računa i transfer novca
-    </title>
-
+    <title>Bankist – Online e-banka za Srbiju | Pregled računa i transfer novca</title>
     <meta
       name="description"
-      content="Bankist je jednostavna i sigurna online e-banka za korisnike u Srbiji. Prijava, pregled transakcija, transfer novca i upravljanje finansijama u jednoj aplikaciji."
+      content="Bankist je online e-banka za Srbiju koja omogućava pregled računa, transakcija, transfer novca, zahtev za kredit i jednostavno digitalno bankarstvo."
     />
-
     <meta
       name="keywords"
-      content="e-banka, online e-banka, Srbija, bankarska aplikacija, transfer novca, pregled transakcija"
+      content="online banka, e-banka Srbija, digitalno bankarstvo, pregled računa, transfer novca, kredit online, bankarska aplikacija"
     />
-
+    <meta name="author" content="Stefan Krbavac" />
     <meta name="robots" content="index, follow" />
-    <meta name="geo.region" content="RS" />
-
     <link rel="canonical" href="https://krbi10.github.io/Bankist-final/" />
 
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Bankist – Online e-banka za Srbiju" />
     <meta
       property="og:description"
-      content="Jednostavna online e-banka: pregled računa, transakcija i transfer novca."
+      content="Pregled transakcija i stanja računa, transfer novca i zahtev za kredit u jednoj jednostavnoj bankarskoj aplikaciji."
     />
-    <meta property="og:type" content="website" />
     <meta property="og:url" content="https://krbi10.github.io/Bankist-final/" />
+    <meta property="og:image" content="https://krbi10.github.io/Bankist-final/assets/og-bankist.png" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bankist – Online e-banka za Srbiju" />
+    <meta
+      name="twitter:description"
+      content="Online bankarska aplikacija za pregled računa, transfere i kredite."
+    />
+    <meta name="twitter:image" content="https://krbi10.github.io/Bankist-final/assets/og-bankist.png" />
 
-    <link rel="icon" type="image/png" href="icon.png" />
-
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="style.css" />
 
-    <style>
-      .visually-hidden {
-        position: absolute;
-        left: -9999px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
+    <!-- Google Analytics placeholder: zameni G-XXXXXXXXXX svojim Measurement ID-em -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    </style>
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
   </head>
-
   <body>
     <nav>
       <p class="welcome">Log in to get started</p>
-      <img src="logo.png" alt="Bankist – online e-banka" class="logo" />
-      <form class="login">
+      <img src="assets/logo-bankist.svg" alt="Bankist – online e-banka" class="logo" />
+      <form class="login" aria-label="Login forma za online bankarstvo">
         <input
           type="text"
           placeholder="user"
           class="login__input login__input--user"
+          aria-label="Korisničko ime"
         />
         <input
-          type="text"
+          type="password"
           placeholder="PIN"
           maxlength="4"
           class="login__input login__input--pin"
+          aria-label="PIN kod"
         />
-        <button class="login__btn">&rarr;</button>
+        <button class="login__btn" aria-label="Prijava u e-banku">→</button>
       </form>
     </nav>
 
     <header class="seo-header">
       <h1>Bankist – Online e-banka za Srbiju</h1>
       <p>
-        Pregled transakcija i stanja računa, transfer novca i zahtev za kredit u
-        jednoj jednostavnoj bankarskoj aplikaciji.
+        Bankist je moderna e-banka koja omogućava jednostavno online bankarstvo,
+        pregled transakcija, slanje novca i upravljanje finansijama putem jedne aplikacije.
+      </p>
+      <p>
+        Ova online e-banka namenjena je korisnicima u Srbiji koji žele brzo, sigurno i pregledno
+        digitalno bankarstvo.
       </p>
 
-      <nav class="internal-nav" aria-label="Interna navigacija">
-        <a href="#transactions">Transakcije</a>
-        <a href="#summary">Pregled</a>
+      <nav class="internal-nav" aria-label="Brza navigacija kroz sekcije aplikacije">
+        <a href="#movements">Transakcije</a>
+        <a href="#balance">Pregled</a>
         <a href="#transfer">Transfer</a>
         <a href="#loan">Kredit</a>
         <a href="#close">Zatvaranje naloga</a>
       </nav>
     </header>
 
-    <section class="visually-hidden" aria-hidden="true">
-      <h2>Online bankarska aplikacija</h2>
-      <p>
-        Bankist je moderna e-banka koja omogućava jednostavno online bankarstvo,
-        pregled transakcija, slanje novca i upravljanje finansijama putem jedne
-        aplikacije.
-      </p>
-      <p>
-        Ova online e-banka namenjena je korisnicima u Srbiji koji žele brzo,
-        sigurno i pregledno digitalno bankarstvo.
-      </p>
-    </section>
-
     <main class="app">
-      <div class="balance">
+      <section class="balance" id="balance">
         <div>
           <p class="balance__label">Current balance</p>
-          <p class="balance__date">
-            As of <span class="date">05/03/2037</span>
-          </p>
+          <p class="balance__date">As of <span class="date">05/03/2037</span></p>
         </div>
         <p class="balance__value">0000€</p>
-      </div>
+      </section>
 
-      <div class="movements" id="transactions">
-        <div class="movements__row">
-          <div class="movements__type movements__type--deposit">2 deposit</div>
-          <div class="movements__date">3 days ago</div>
-          <div class="movements__value">4 000€</div>
-        </div>
-        <div class="movements__row">
-          <div class="movements__type movements__type--withdrawal">
-            1 withdrawal
-          </div>
-          <div class="movements__date">24/01/2037</div>
-          <div class="movements__value">-378€</div>
-        </div>
-      </div>
+      <section class="movements" id="movements" aria-label="Lista transakcija"></section>
 
-      <div class="summary" id="summary">
+      <section class="summary">
         <p class="summary__label">In</p>
         <p class="summary__value summary__value--in">0000€</p>
         <p class="summary__label">Out</p>
         <p class="summary__value summary__value--out">0000€</p>
         <p class="summary__label">Interest</p>
         <p class="summary__value summary__value--interest">0000€</p>
-        <button class="btn--sort">&downarrow; SORT</button>
-      </div>
+        <button class="btn--sort">↓ SORT</button>
+      </section>
 
-      <div class="operation operation--transfer" id="transfer">
+      <section class="operation operation--transfer" id="transfer">
         <h2>Transfer money</h2>
         <form class="form form--transfer">
-          <input type="text" class="form__input form__input--to" />
-          <input type="number" class="form__input form__input--amount" />
-          <button class="form__btn form__btn--transfer">&rarr;</button>
+          <input type="text" class="form__input form__input--to" aria-label="Primaoc transfera" />
+          <input
+            type="number"
+            class="form__input form__input--amount"
+            aria-label="Iznos transfera"
+          />
+          <button class="form__btn form__btn--transfer">→</button>
           <label class="form__label">Transfer to</label>
           <label class="form__label">Amount</label>
         </form>
-      </div>
+      </section>
 
-      <div class="operation operation--loan" id="loan">
+      <section class="operation operation--loan" id="loan">
         <h2>Request loan</h2>
         <form class="form form--loan">
-          <input type="number" class="form__input form__input--loan-amount" />
-          <button class="form__btn form__btn--loan">&rarr;</button>
+          <input
+            type="number"
+            class="form__input form__input--loan-amount"
+            aria-label="Iznos kredita"
+          />
+          <button class="form__btn form__btn--loan">→</button>
           <label class="form__label form__label--loan">Amount</label>
         </form>
-      </div>
+      </section>
 
-      <div class="operation operation--close" id="close">
+      <section class="operation operation--close" id="close">
         <h2>Close account</h2>
         <form class="form form--close">
-          <input type="text" class="form__input form__input--user" />
-          <input
-            type="password"
-            maxlength="6"
-            class="form__input form__input--pin"
-          />
-          <button class="form__btn form__btn--close">&rarr;</button>
+          <input type="text" class="form__input form__input--user" aria-label="Potvrda korisnika" />
+          <input type="password" maxlength="6" class="form__input form__input--pin" aria-label="Potvrda PIN-a" />
+          <button class="form__btn form__btn--close">→</button>
           <label class="form__label">Confirm user</label>
           <label class="form__label">Confirm PIN</label>
         </form>
-      </div>
+      </section>
 
-      <p class="logout-timer">
-        You will be logged out in <span class="timer">05:00</span>
-      </p>
+      <p class="logout-timer">You will be logged out in <span class="timer">05:00</span></p>
     </main>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Bankist",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "description": "Jednostavna online e-banka za korisnike u Srbiji.",
-        "areaServed": {
-          "@type": "Country",
-          "name": "Serbia"
-        }
-      }
-    </script>
+    <section class="share-box" aria-labelledby="share-title">
+      <h2 id="share-title">Podeli Bankist aplikaciju</h2>
+      <p>
+        Podeli ovu online bankarsku aplikaciju putem društvenih mreža i prikaži ovu sekciju na screenshotu za projekat.
+      </p>
+      <div class="share-links">
+        <a
+          href="https://www.facebook.com/sharer/sharer.php?u=https://krbi10.github.io/Bankist-final/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Facebook Share</a
+        >
+        <a
+          href="https://twitter.com/intent/tweet?url=https://krbi10.github.io/Bankist-final/&text=Bankist%20online%20e-banka%20za%20Srbiju"
+          target="_blank"
+          rel="noopener noreferrer"
+          >X / Twitter Share</a
+        >
+        <a
+          href="https://www.linkedin.com/sharing/share-offsite/?url=https://krbi10.github.io/Bankist-final/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn Share</a
+        >
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>Bankist demo projekat za predmet Veb komunikacije.</p>
+      <p>
+        Ključne reči u anchor text-u: <a href="#transfer">transfer novca</a>,
+        <a href="#loan">online kredit</a>, <a href="#movements">pregled transakcija</a>.
+      </p>
+    </footer>
 
     <script src="script.js"></script>
   </body>

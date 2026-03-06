@@ -14,7 +14,7 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #444;
   background-color: #f3f3f3;
-  height: 100vh;
+  min-height: 100vh;
   padding: 2rem;
 }
 
@@ -22,6 +22,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.6rem;
   padding: 0 2rem;
 }
 
@@ -36,6 +37,7 @@ nav {
 
 .login {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .login__input {
@@ -52,9 +54,12 @@ nav {
   transition: all 0.3s;
 }
 
-.login__input:focus {
-  outline: none;
-  border: 1px solid #ccc;
+.login__input:focus,
+.internal-nav a:focus,
+.share-links a:focus,
+.site-footer a:focus {
+  outline: 2px solid #39b385;
+  outline-offset: 2px;
 }
 
 .login__input::placeholder {
@@ -74,28 +79,32 @@ nav {
 .login__btn:focus,
 .btn--sort:hover,
 .btn--sort:focus {
-  outline: none;
   color: #777;
 }
 
-.seo-header {
+.seo-header,
+.share-box,
+.site-footer {
   max-width: 100rem;
   margin: 2rem auto 0;
   padding: 0 2rem;
 }
 
 .seo-header h1 {
-  font-size: 2.2rem;
-  font-weight: 600;
+  font-size: 2.6rem;
+  font-weight: 700;
   color: #333;
   line-height: 1.2;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
 }
 
-.seo-header p {
+.seo-header p,
+.share-box p,
+.site-footer p {
   font-size: 1.4rem;
   color: #666;
   margin-bottom: 1.2rem;
+  line-height: 1.6;
 }
 
 .internal-nav {
@@ -114,20 +123,24 @@ nav {
   transform: translateY(0);
 }
 
-.internal-nav a {
+.internal-nav a,
+.share-links a,
+.site-footer a {
   font-size: 1.3rem;
   color: #444;
   text-decoration: none;
   background: #fff;
-  padding: 0.6rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 999px;
   border: 1px solid #eee;
   transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
 }
 
 .internal-nav a:hover,
-.internal-nav a:focus {
-  outline: none;
+.share-links a:hover,
+.site-footer a:hover {
   border-color: #ddd;
   color: #111;
 }
@@ -172,7 +185,7 @@ nav {
   grid-row: 2 / span 3;
   background-color: #fff;
   border-radius: 1rem;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .movements__row {
@@ -218,6 +231,8 @@ nav {
   align-items: baseline;
   padding: 0 0.3rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
 .summary__label {
@@ -336,4 +351,88 @@ h2 {
 
 .timer {
   font-weight: 600;
+}
+
+.share-box {
+  background: #fff;
+  border-radius: 1.6rem;
+  padding: 2.4rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.05);
+}
+
+.share-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-footer {
+  padding-bottom: 3rem;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 1.6rem;
+  }
+
+  nav,
+  .balance {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .logo {
+    align-self: center;
+  }
+
+  .login {
+    justify-content: center;
+  }
+
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
+  }
+
+  .balance,
+  .movements,
+  .summary,
+  .operation {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .summary {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .login__input {
+    width: 10rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .movements__row {
+    padding: 1.6rem 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .form,
+  .form.form--loan {
+    grid-template-columns: 1fr;
+  }
+
+  .summary__value {
+    margin-right: 1rem;
+  }
+
+  .btn--sort {
+    margin-left: 0;
+  }
 }
